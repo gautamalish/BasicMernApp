@@ -2,6 +2,10 @@ import express from "express";
 import { config } from "dotenv";
 import mongoose from "mongoose";
 import router from "./routes/UserRoute.js";
+import cors from "cors";
+const app = express();
+const PORT = process.env.PORT || 7000;
+app.use(cors());
 config();
 mongoose
   .connect(process.env.URI)
@@ -14,7 +18,6 @@ mongoose
   .catch((err) => {
     console.log("Error", err);
   });
-const app = express();
-const PORT = process.env.PORT || 7000;
+
 app.use(express.json());
-app.use("/api/user",router);
+app.use("/", router);
