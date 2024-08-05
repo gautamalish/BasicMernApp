@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AllPost />} />
           <Route path="/create" element={<Create />} />
-          <Route path="/update" element={<Update />} />
+          <Route path="/:id" element={<Update />} />
         </Routes>
       </>
     </BrowserRouter>

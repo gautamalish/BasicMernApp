@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 const AllPost = () => {
   const [error, setError] = useState("");
   const [data, setData] = useState([]);
@@ -52,9 +52,9 @@ const AllPost = () => {
                   >
                     Delete
                   </button>
-                  <button href="#" className="btn btn-primary">
+                  <Link to={`${item._id}`} className="btn btn-primary">
                     Edit
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
